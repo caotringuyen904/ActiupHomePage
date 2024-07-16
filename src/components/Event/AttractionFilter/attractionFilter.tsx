@@ -52,8 +52,10 @@ const AttractionFilter = () => {
 
   return (
     <div className="bg-blue-rgb p-10">
-      <h1 className="container mx-auto text-2xl font-bold mb-8 text-white">Giai tri</h1>
-      <div className="flex flex-wrap gap-2 mb-6 container mx-auto" >
+      <h1 className="container mx-auto text-2xl font-bold mb-8 text-white">
+        GIẢI TRÍ
+      </h1>
+      <div className="flex flex-wrap gap-2 mb-6 container mx-auto">
         {attractionCategories.map((category) => (
           <button
             key={category.event_category_id}
@@ -74,19 +76,47 @@ const AttractionFilter = () => {
         </div>
       ) : (
         <div className="container mx-auto p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {attractionEvent.map((event) => (
-              <div key={event.id} className="bg-white shadow-md rounded-lg p-4">
-                <img
-                  src={event.banner_url}
-                  alt={event.event_slug}
-                  className="w-full h-48 object-cover rounded-t-lg mb-4"
-                />
-                <h3 className="text-lg font-bold">{event.event_slug}</h3>
-                <p className="text-gray-600">
-                  Start Date: {new Date(event.start_date).toLocaleDateString()}
-                </p>
-                <p className="text-gray-600">Từ {event.min_price}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+            {attractionEvent.map((event, index) => (
+              <div
+                key={event.id}
+                className={`${
+                  index === 0 ? "md:col-span-3 flex" : "bg-white"
+                } text-center p-4 text-2xl rounded-lg`}
+              >
+                {index === 0 ? (
+                  <>
+                    <div className="w-full md:w-2/3">
+                      <img
+                        src={event.banner_url}
+                        alt={event.event_slug}
+                        className="w-full h-full object-cover rounded-lg mb-4"
+                      />
+                    </div>
+                    <div className="flex-grow md:w-1/3 p-4 bg-white ml-8 rounded-lg">
+                      <h3 className="text-lg font-bold ">{event.event_slug}</h3>
+                      <p className="text-gray-600">
+                        Start Date:{" "}
+                        {new Date(event.start_date).toLocaleDateString()}
+                      </p>
+                      <p className="text-gray-600">Từ {event.min_price}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={event.banner_url}
+                      alt={event.event_slug}
+                      className="w-full h-48 object-cover rounded-t-lg mb-4"
+                    />
+                    <h3 className="text-lg font-bold">{event.event_slug}</h3>
+                    <p className="text-gray-600">
+                      Start Date:{" "}
+                      {new Date(event.start_date).toLocaleDateString()}
+                    </p>
+                    <p className="text-gray-600">Từ {event.min_price}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>

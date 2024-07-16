@@ -28,7 +28,7 @@ const getEmbedUrl = (url: string): string => {
 };
 
 const YoutubeBanner: React.FC = () => {
-  const url = "https://www.youtube.com/live/hpIidsScFsw?si=WNqvKZ7VvClWC7MN";
+  const url = "https://www.youtube.com/watch?v=CRGKTef6w2g";
   const embedUrl = getEmbedUrl(url);
 
   return (
