@@ -52,7 +52,7 @@ const Searchbar: React.FC = () => {
   };
 
   return (
-    <div className="absolute container bottom-[-45px] left-1/2 transform -translate-x-1/2 mt-10 w-[30%]">
+    <div className="absolute container bottom-[-45px] left-1/2 transform -translate-x-1/2 mt-10 w-[40%]">
       <div className="flex items-center justify-center bg-white h-[90px] w-auto border rounded-lg p-4 shadow-lg">
         <div className="relative border-r-4 border-gray-300" ref={ref}>
           <button
@@ -104,8 +104,8 @@ const Searchbar: React.FC = () => {
           showMonthYearPicker
           dateFormat="MM-yyyy"
           locale="vi"
-          placeholderText="Thoi gian dien ra su kien"
-          className="bg-gray-50 text-gray-900 text-sm focus:ring-gray-500 w-full pl-8 pb-8 mt-8 border-none focus:outline-none   "
+          placeholderText="Thoi gian dien ra su kien "
+          className="static bg-gray-50 text-gray-900 text-sm focus:ring-gray-500 w-100 pl-8 pb-8 mt-8 border-none focus:outline-none   "
         />
         <button
           onClick={handleSearch}
